@@ -71,4 +71,21 @@ if cursor.fetchone()[0] == 0:
     )
 
 conn.commit()
+
+# 3. MOSTRAR RESULTADOS EN TERMINAL
+print("LIBROS")
+cursor.execute("SELECT * FROM libros")
+for fila in cursor.fetchall():
+    print(fila)
+
+print("\nLECTORES")
+cursor.execute("SELECT * FROM lectores")
+for fila in cursor.fetchall():
+    print(fila)
+
+print("\nPRESTAMOS")
+cursor.execute("SELECT * FROM prestamos")
+for fila in cursor.fetchall():
+    print(fila)
+
 conn.close()
